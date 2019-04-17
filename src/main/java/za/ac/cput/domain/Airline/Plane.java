@@ -1,15 +1,16 @@
 package za.ac.cput.domain.Airline;
 
-import za.ac.cput.domain.Tourist;
 
-import java.util.Set;
 
 public class Plane {
+
+
     private String plneType, plneCode;
 
-    private Plane () {}
+    private Plane() {
+    }
 
-    private Plane(Plane.Builder builder){
+    private Plane(Plane.Builder builder) {
         this.plneType = builder.plneType;
         this.plneCode = builder.plneCode;
 
@@ -19,10 +20,12 @@ public class Plane {
 
         return plneType;
     }
+
     public String getPlneCode() {
 
         return plneCode;
 
+    }
 
     public static class Builder {
 
@@ -44,15 +47,8 @@ public class Plane {
             return new Plane(this);
         }
 
+
     }
-
-   /*@Override
-    public String toString() {
-        return "Tourist{" +
-
-                ", tourName='" + tourName + '\'' +
-                ", tourSurname='" + tourSurname + '\'' +
-                ", age=" + age +
-                '}';
-    }*/
 }
+
+

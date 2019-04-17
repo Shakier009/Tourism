@@ -1,6 +1,39 @@
 package za.ac.cput.domain.TouristDetails;
 
-import za.ac.cput.domain.TourDestination.TourDest;
 
-public class TouristType extends TourDest {
+
+public class TouristType {
+    private String race;
+
+    private TouristType() {
+    }
+
+    private TouristType(TouristType.Builder builder) {
+        this.race = builder.race;
+
+    }
+
+    public String getRace() {
+        return race;
+    }
+
+
+    public static class Builder {
+
+        private String race;
+
+
+        public TouristType.Builder race(String race) {
+            this.race = race;
+
+            return this;
+        }
+
+
+        public TouristType build() {
+            return new TouristType(this);
+        }
+
+
+    }
 }

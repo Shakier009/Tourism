@@ -1,14 +1,10 @@
 package za.ac.cput.domain.Airline;
 
-import za.ac.cput.domain.Tourist;
-
-import java.util.Set;
 
 public class Booking {
 
     private String depTime, invoice, destination, bookingId;
     private int seatNr;
-    //private Set<Tourist> tourist;
 
     private Booking () {}
 
@@ -80,13 +76,5 @@ public class Booking {
 
     }
 
-    /*@Override
-    public String toString() {
-        return "Tourist{" +
 
-                ", tourName='" + tourName + '\'' +
-                ", tourSurname='" + tourSurname + '\'' +
-                ", age=" + age +
-                '}';
-    }*/
 }

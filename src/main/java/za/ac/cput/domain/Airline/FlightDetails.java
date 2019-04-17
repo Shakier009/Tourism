@@ -1,6 +1,6 @@
 package za.ac.cput.domain.Airline;
 
-import za.ac.cput.domain.Tourist;
+
 
 import java.util.Set;
 
@@ -68,13 +68,5 @@ public class FlightDetails{
 
     }
 
-    /*@Override
-    public String toString() {
-        return "Tourist{" +
 
-                ", tourName='" + tourName + '\'' +
-                ", tourSurname='" + tourSurname + '\'' +
-                ", age=" + age +
-                '}';
-    }*/
 }
