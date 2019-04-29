@@ -4,8 +4,8 @@ package za.ac.cput.domain.TouristDetails;
 
 public class PersonalInfo{
 
-    private String age, birthPlce;
-
+    private String birthPlce;
+private int age;
     private PersonalInfo() {
     }
 
@@ -15,7 +15,7 @@ public class PersonalInfo{
 
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
@@ -25,10 +25,11 @@ public class PersonalInfo{
 
     public static class Builder {
 
-        private String age, birthPlce;
+        private String  birthPlce;
+        private int age;
 
 
-        public PersonalInfo.Builder age(String age) {
+        public PersonalInfo.Builder age(int age) {
             this.age = age;
 
             return this;
@@ -46,4 +47,14 @@ public class PersonalInfo{
 
 
     }
+
+     /*@Override
+    public String toString() {
+        return "Tourist{" +
+
+                ", tourName='" + tourName + '\'' +
+                ", tourSurname='" + tourSurname + '\'' +
+                ", age=" + age +
+                '}';
+    }*/
 }

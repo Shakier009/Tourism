@@ -36,6 +36,16 @@ public interface Gender{
             return new Gender(this);
         }
 
+         /*@Override
+    public String toString() {
+        return "Tourist{" +
+
+                ", tourName='" + tourName + '\'' +
+                ", tourSurname='" + tourSurname + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
 
     }*/
 }

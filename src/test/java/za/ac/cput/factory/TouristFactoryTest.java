@@ -1,8 +1,8 @@
 package za.ac.cput.factory;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Assert;
 import org.junit.Test;
 import za.ac.cput.domain.Tourist;
 import za.ac.cput.factory.TouristFactory;

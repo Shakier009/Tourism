@@ -48,4 +48,14 @@ public class PlaceInt{
 
 
     }
+
+     /*@Override
+    public String toString() {
+        return "Tourist{" +
+
+                ", tourName='" + tourName + '\'' +
+                ", tourSurname='" + tourSurname + '\'' +
+                ", age=" + age +
+                '}';
+    }*/
 }
