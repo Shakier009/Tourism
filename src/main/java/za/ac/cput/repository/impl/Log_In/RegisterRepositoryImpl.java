@@ -29,17 +29,14 @@ import java.util.Set;
         }
 
         public Register read(String userName){
-            //find the student in the set and return it if it exist
             return null;
         }
 
         public Register update(Register register) {
-            // find the student, update it and return the updated student
-            return null;
+           return null;
         }
 
         public void delete(String userName) {
-            //find the student and delete it if it exists
 
         }
 

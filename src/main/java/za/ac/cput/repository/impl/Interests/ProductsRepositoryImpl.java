@@ -27,17 +27,14 @@ import java.util.Set;
         }
 
         public Products read(String prodType){
-            //find the student in the set and return it if it exist
             return null;
         }
 
         public Products update(Products products) {
-            // find the student, update it and return the updated student
-            return null;
+           return null;
         }
 
         public void delete(String prodType) {
-            //find the student and delete it if it exists
 
         }
 

@@ -28,17 +28,14 @@ import java.util.Set;
         }
 
         public PersonalInfo read(String birthPlce){
-            //find the student in the set and return it if it exist
-            return null;
+             return null;
         }
 
         public PersonalInfo update(PersonalInfo personalInfo) {
-            // find the student, update it and return the updated student
             return null;
         }
 
         public void delete(String birthPlce) {
-            //find the student and delete it if it exists
 
         }
 

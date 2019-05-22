@@ -26,17 +26,14 @@ import java.util.Set;
         }
 
         public Interests read(String ticketNr){
-            //find the student in the set and return it if it exist
-            return null;
+           return null;
         }
 
         public Interests update(Interests interests) {
-            // find the student, update it and return the updated student
             return null;
         }
 
         public void delete(String ticketNr) {
-            //find the student and delete it if it exists
 
         }
 

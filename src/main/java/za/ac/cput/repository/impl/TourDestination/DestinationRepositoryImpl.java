@@ -28,17 +28,14 @@ import java.util.Set;
         }
 
         public Destination read(String destType){
-            //find the student in the set and return it if it exist
             return null;
         }
 
         public Destination update(Destination destination) {
-            // find the student, update it and return the updated student
-            return null;
+           return null;
         }
 
         public void delete(String destType) {
-            //find the student and delete it if it exists
 
         }
 

@@ -28,17 +28,14 @@ import java.util.Set;
         }
 
         public LogIn read(String userName){
-            //find the student in the set and return it if it exist
             return null;
         }
 
         public LogIn update(LogIn logIn) {
-            // find the student, update it and return the updated student
             return null;
         }
 
         public void delete(String userName) {
-            //find the student and delete it if it exists
 
         }
 

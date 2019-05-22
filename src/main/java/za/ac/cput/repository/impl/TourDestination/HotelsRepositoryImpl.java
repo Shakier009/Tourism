@@ -27,17 +27,14 @@ import java.util.Set;
         }
 
         public Hotels read(String HotName){
-            //find the student in the set and return it if it exist
-            return null;
+             return null;
         }
 
         public Hotels update(Hotels hotels) {
-            // find the student, update it and return the updated student
             return null;
         }
 
         public void delete(String HotName) {
-            //find the student and delete it if it exists
 
         }
 

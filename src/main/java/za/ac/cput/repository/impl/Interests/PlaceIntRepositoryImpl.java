@@ -28,17 +28,14 @@ import java.util.Set;
         }
 
         public PlaceInt read(String plcName){
-            //find the student in the set and return it if it exist
             return null;
         }
 
         public PlaceInt update(PlaceInt placeInt) {
-            // find the student, update it and return the updated student
             return null;
         }
 
         public void delete(String plcName) {
-            //find the student and delete it if it exists
 
         }
 

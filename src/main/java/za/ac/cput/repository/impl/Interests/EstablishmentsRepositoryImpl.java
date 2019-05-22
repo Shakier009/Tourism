@@ -28,17 +28,14 @@ import java.util.Set;
         }
 
         public Establishments read(String location){
-            //find the student in the set and return it if it exist
             return null;
         }
 
         public Establishments update(Establishments establishments) {
-            // find the student, update it and return the updated student
             return null;
         }
 
         public void delete(String location) {
-            //find the student and delete it if it exists
 
         }
 

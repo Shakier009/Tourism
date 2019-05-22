@@ -26,17 +26,14 @@ import java.util.Set;
         }
 
         public TouristType read(String race){
-            //find the student in the set and return it if it exist
             return null;
         }
 
         public TouristType update(TouristType touristType) {
-            // find the student, update it and return the updated student
             return null;
         }
 
         public void delete(String race) {
-            //find the student and delete it if it exists
 
         }
 
