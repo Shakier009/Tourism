@@ -2,6 +2,7 @@ package za.ac.cput.service.Log_In.Impl;
 
 import za.ac.cput.domain.Log_In.Reset;
 import za.ac.cput.repository.Log_In.ResetRepository;
+import za.ac.cput.repository.impl.Log_In.ResetRepositoryImpl;
 import za.ac.cput.service.Log_In.ResetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,11 +10,22 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service("ServiceImpl")
-public class ResetServiceImpl {
+@Service("ResetServiceImpl")
+public class ResetServiceImpl  implements ResetService{
     @Autowired
     @Qualifier("InMemory")
+
+    private static ResetServiceImpl service = null;
     private ResetRepository repository;
+
+    private ResetServiceImpl() {
+        this.repository = ResetRepositoryImpl.getRepository();
+    }
+
+    public static ResetServiceImpl getService(){
+        if (service == null) service = new ResetServiceImpl();
+        return service;
+    }
 
     @Override
     public Reset create(Reset reset) {
@@ -22,7 +34,7 @@ public class ResetServiceImpl {
 
     @Override
     public Reset update(Reset reset) {
-        return repository.update(attractions);
+        return repository.update(reset);
     }
 
     @Override
@@ -37,7 +49,7 @@ public class ResetServiceImpl {
     }
 
     @Override
-    public Set<Reset> getAll() {
+    public Set<Reset> geetAll() {
         return repository.getAll();
     }
 }

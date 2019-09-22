@@ -19,8 +19,8 @@ public class EstablishmentsController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    Establishments create(@PathVariable  String ticketNr){
-        Establishments establishments = EstablishmentsFactory.buildEstablishments(ticketNr);
+    Establishments create(@PathVariable  String location, String estId){
+        Establishments establishments = EstablishmentsFactory.getEstablishments(location, estId);
         return service.create(establishments);
 
     }
@@ -47,6 +47,6 @@ public class EstablishmentsController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<Establishments> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

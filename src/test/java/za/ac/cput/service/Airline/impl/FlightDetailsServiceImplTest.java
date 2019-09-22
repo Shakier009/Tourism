@@ -26,12 +26,12 @@ public class FlightDetailsServiceImplTest {
 
     @Before
     public void setUp() throws Exception {
-        this.repository = FlightDetailsRepositoryImpl.getRepository();
-        this.flightDetails = FlightDetailsFactory.buildFlightDetails("Application Development Practice 3");
+        this.repository = (FlightDetailsRepositoryImpl) FlightDetailsRepositoryImpl.getRepository();
+        this.flightDetails = FlightDetailsFactory.getFlightDetails("A3", "7B", 34, 77);
     }
 
     @Test
-    public void FlightDetailsCreate() {
+    public void AirlineCreate() {
         FlightDetails created = this.repository.create(this.flightDetails);
         System.out.println("In create, created = " + created);
         Assert.assertNotNull(created);
@@ -39,32 +39,32 @@ public class FlightDetailsServiceImplTest {
     }
 
     @Test
-    public void FlightDetailsUpdate() {
-        String newCourseName = "Application Development Theory 3";
-        FlightDetails updated = new FlightDetails.Builder().copy(getSaved()).courseName(newCourseName).build();
+    public void AirlineUpdate() {
+        String clss = "A3";
+        FlightDetails updated = new FlightDetails.Builder().flightClss(clss).build();
         System.out.println("In update, updated = " + updated);
         this.repository.update(updated);
-        Assert.assertSame(newCourseName, updated.getFlightClss());
+        Assert.assertSame(clss, updated.getFlightClss());
     }
 
     @Test
-    public void FlightDetailsDelete() {
+    public void AirlineDelete() {
         FlightDetails saved = getSaved();
         this.repository.delete(saved.getFlightClss());
         d_getAll();
     }
 
-    @Test
-    public void FlightDetailsRead() {
-        FlightDetails saved = getSaved();
-        FlightDetails read = this.repository.read(saved.getFlightClss());
-        System.out.println("In read, read = "+ read);
-        Assert.assertSame(read, saved);
-    }
+//    @Test
+//    public void AirlineRead() {
+//        Airline saved = getSaved();
+//        Airline read = this.repository.read(saved.getTicketNr());
+//        System.out.println("In read, read = "+ read);
+//        Assert.assertSame(read, saved);
+//    }
 
     @Test
     public void d_getAll() {
-        Set<FlightDetails> flightDetails = this.repository.getAll();
-        System.out.println("In getall, all = " + flightDetails);
+        Set<FlightDetails> airline = this.repository.getAll();
+        System.out.println("In getall, all = " + airline);
     }
 }

@@ -26,12 +26,12 @@ public class PlaneServiceImplTest {
 
     @Before
     public void setUp() throws Exception {
-        this.repository = PlaneRepositoryImpl.getRepository();
-        this.plane = PlaneFactory.buildPlane("Application Development Practice 3");
+        this.repository = (PlaneRepositoryImpl) PlaneRepositoryImpl.getRepository();
+        this.plane = PlaneFactory.getPlane("Mark3", "xxx7749");
     }
 
     @Test
-    public void PlaneCreate() {
+    public void AirlineCreate() {
         Plane created = this.repository.create(this.plane);
         System.out.println("In create, created = " + created);
         Assert.assertNotNull(created);
@@ -39,32 +39,32 @@ public class PlaneServiceImplTest {
     }
 
     @Test
-    public void PlaneUpdate() {
-        String newCourseName = "Application Development Theory 3";
-        Plane updated = new Plane.Builder().copy(getSaved()).courseName(newCourseName).build();
+    public void AirlineUpdate() {
+        String plnecde = "Application Development Theory 3";
+        Plane updated = new Plane.Builder().plneCode(plnecde).build();
         System.out.println("In update, updated = " + updated);
         this.repository.update(updated);
-        Assert.assertSame(newCourseName, updated.getPlneCode());
+        Assert.assertSame(plnecde, updated.getPlneCode());
     }
 
     @Test
-    public void PlaneDelete() {
+    public void AirlineDelete() {
         Plane saved = getSaved();
         this.repository.delete(saved.getPlneCode());
         d_getAll();
     }
 
-    @Test
-    public void AirlineRead() {
-        Plane saved = getSaved();
-        Plane read = this.repository.read(saved.getPlneCode());
-        System.out.println("In read, read = "+ read);
-        Assert.assertSame(read, saved);
-    }
+//    @Test
+//    public void AirlineRead() {
+//        Airline saved = getSaved();
+//        Airline read = this.repository.read(saved.getTicketNr());
+//        System.out.println("In read, read = "+ read);
+//        Assert.assertSame(read, saved);
+//    }
 
     @Test
     public void d_getAll() {
-        Set<Plane> plane = this.repository.getAll();
-        System.out.println("In getall, all = " + plane);
+        Set<Plane> airline = this.repository.getAll();
+        System.out.println("In getall, all = " + airline);
     }
 }

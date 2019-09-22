@@ -21,8 +21,8 @@ public class PlaneController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    Plane create(@PathVariable  String ticketNr){
-        Plane plane = PlaneFactory.buildPlane(ticketNr);
+    Plane create(@PathVariable  String plneType, String plneCode){
+        Plane plane = PlaneFactory.getPlane(plneType, plneCode);
         return service.create(plane);
 
     }
@@ -49,7 +49,7 @@ public class PlaneController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<Plane> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }}
 
 

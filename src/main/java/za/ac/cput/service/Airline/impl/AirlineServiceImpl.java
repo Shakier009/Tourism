@@ -1,17 +1,20 @@
 package za.ac.cput.service.Airline.impl;
 
-import za.ac.cput.domain.Airline.Airline;
-import za.ac.cput.repository.Airline.AirlineRepository;
-import za.ac.cput.service.Airline.AirlineSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import za.ac.cput.domain.Airline.Airline;
+import za.ac.cput.repository.Airline.AirlineRepository;
+import za.ac.cput.repository.impl.Airline.AirlineRepositoryImpl;
+import za.ac.cput.service.Airline.AirlineSevice;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service("ServiceImpl")
-public class AirlineServiceImpl {
+@Service("AirlineServiceImpl")
+public class AirlineServiceImpl implements AirlineSevice{
 
+    @Autowired
+    @Qualifier("InMemory")
     private static AirlineServiceImpl service = null;
     private AirlineRepository repository;
 
@@ -19,19 +22,19 @@ public class AirlineServiceImpl {
         this.repository = AirlineRepositoryImpl.getRepository();
     }
 
-    public static CourseServiceImpl getService(){
-        if (service == null) service = new CourseServiceImpl();
+    public static AirlineServiceImpl getService(){
+        if (service == null) service = new AirlineServiceImpl();
         return service;
     }
 
     @Override
-    public Course create(Course course) {
-        return this.repository.create(course);
+    public Airline create(Airline airline) {
+        return this.repository.create(airline);
     }
 
     @Override
-    public Course update(Course course) {
-        return this.repository.update(course);
+    public Airline update(Airline airline) {
+        return this.repository.update(airline);
     }
 
     @Override
@@ -40,13 +43,17 @@ public class AirlineServiceImpl {
     }
 
     @Override
-    public Course read(String s) {
+    public Airline read(String s) {
         return this.repository.read(s);
     }
 
     @Override
-    public Set<Course> getAll() {
+    public Set<Airline> geetAll() {
         return this.repository.getAll();
     }
 
+    /*@Override
+    public Set<Airline> geetAll() {
+        return null;
+    }*/
 }

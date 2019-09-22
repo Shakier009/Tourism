@@ -22,8 +22,8 @@ public class FlightDetailsController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    FlightDetails create(@PathVariable  String ticketNr){
-        FlightDetails flightDetails = FlightDetailsFactory.buildFlightDetails(ticketNr);
+    FlightDetails create(@PathVariable  String flightClss, String flightRow, int flightNr, int flightSeat){
+        FlightDetails flightDetails = FlightDetailsFactory.getFlightDetails(flightClss, flightRow, flightNr, flightSeat);
         return service.create(flightDetails);
 
     }
@@ -50,6 +50,6 @@ public class FlightDetailsController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<FlightDetails> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

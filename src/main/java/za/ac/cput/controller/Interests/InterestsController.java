@@ -19,8 +19,8 @@ public class InterestsController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    Interests create(@PathVariable  String ticketNr){
-        Interests interests = InterestsFactory.buildInterests(ticketNr);
+    Interests create(@PathVariable  String intrName, String plceIntr){
+        Interests interests = InterestsFactory.getInterests(intrName, plceIntr);
         return service.create(interests);
 
     }
@@ -47,6 +47,6 @@ public class InterestsController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<Interests> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

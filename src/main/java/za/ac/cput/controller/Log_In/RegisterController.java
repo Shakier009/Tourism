@@ -20,8 +20,8 @@ public class RegisterController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    Register create(@PathVariable  String ticketNr){
-        Register register = RegisterFactory.buildRegister(ticketNr);
+    Register create(@PathVariable  String id, String userName, String email){
+        Register register = RegisterFactory.getRegister(id, userName);
         return service.create(register);
 
     }
@@ -48,6 +48,6 @@ public class RegisterController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<Register> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

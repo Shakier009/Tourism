@@ -20,9 +20,10 @@ public class LogInController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    LogIn create(@PathVariable  String ticketNr){
-        LogIn logIn = LogInFactory.buildLogIn(ticketNr);
+    LogIn create(@PathVariable  String userName, String pssword){
+        LogIn logIn = LogInFactory.getLogIn(userName, pssword);
         return service.create(logIn);
+
 
     }
 
@@ -48,6 +49,6 @@ public class LogInController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<LogIn> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

@@ -2,6 +2,7 @@ package za.ac.cput.service.TourDestination.Impl;
 
 import za.ac.cput.domain.TourDestination.Hospitals;
 import za.ac.cput.repository.TourDestination.HospitalsRepository;
+import za.ac.cput.repository.impl.TourDestination.HospitalsRepositoryImpl;
 import za.ac.cput.service.TourDestination.HospitalsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,12 +10,23 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service("ServiceImpl")
-public class HospitalsServiceImpl {
+@Service("HospitalsServiceImpl")
+public class HospitalsServiceImpl implements HospitalsService{
 
     @Autowired
     @Qualifier("InMemory")
+
+    private static HospitalsServiceImpl service = null;
     private HospitalsRepository repository;
+
+    private HospitalsServiceImpl() {
+        this.repository = HospitalsRepositoryImpl.getRepository();
+    }
+
+    public static HospitalsServiceImpl getService(){
+        if (service == null) service = new HospitalsServiceImpl();
+        return service;
+    }
 
     @Override
     public Hospitals create(Hospitals hospitals) {
@@ -38,7 +50,7 @@ public class HospitalsServiceImpl {
     }
 
     @Override
-    public Set<Hospitals> getAll() {
+    public Set<Hospitals> geetAll() {
         return repository.getAll();
     }
 }

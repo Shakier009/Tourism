@@ -20,8 +20,8 @@ public class ResetController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    Reset create(@PathVariable  String ticketNr){
-        Reset reset = ResetFactory.buildReset(ticketNr);
+    Reset create(@PathVariable  String userName, String email){
+        Reset reset = ResetFactory.getReset(userName, email);
         return service.create(reset);
 
     }
@@ -48,6 +48,6 @@ public class ResetController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<Reset> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

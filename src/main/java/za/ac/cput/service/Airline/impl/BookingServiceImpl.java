@@ -2,6 +2,7 @@ package za.ac.cput.service.Airline.impl;
 
 import za.ac.cput.domain.Airline.Booking;
 import za.ac.cput.repository.Airline.BookingRepository;
+import za.ac.cput.repository.impl.Airline.BookingRepositoryImpl;
 import za.ac.cput.service.Airline.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,11 +10,22 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-
-public class BookingServiceImpl {
+@Service("BookingServiceImpl")
+public class BookingServiceImpl implements BookingService{
     @Autowired
     @Qualifier("InMemory")
+
+    private static BookingServiceImpl service = null;
     private BookingRepository repository;
+
+    private BookingServiceImpl() {
+        this.repository = BookingRepositoryImpl.getRepository();
+    }
+
+    public static BookingServiceImpl getService(){
+        if (service == null) service = new BookingServiceImpl();
+        return service;
+    }
 
     @Override
     public Booking create(Booking booking) {
@@ -37,7 +49,8 @@ public class BookingServiceImpl {
     }
 
     @Override
-    public Set<Booking> getAll() {
+    public Set<Booking> geetAll() {
         return repository.getAll();
     }
+
 }

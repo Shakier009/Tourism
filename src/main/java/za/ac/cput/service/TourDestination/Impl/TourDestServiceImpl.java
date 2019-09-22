@@ -2,6 +2,8 @@ package za.ac.cput.service.TourDestination.Impl;
 
 import za.ac.cput.domain.TourDestination.TourDest;
 import za.ac.cput.repository.TourDestination.TourDestRepository;
+import za.ac.cput.repository.impl.TourDestination.TourDestRepositoryImpl;
+import za.ac.cput.repository.impl.TouristDetails.TouristTypeRepositoryImpl;
 import za.ac.cput.service.TourDestination.TourDestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,12 +11,23 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service("ServiceImpl")
-public class TourDestServiceImpl {
+@Service("TourDestServiceImpl")
+public class TourDestServiceImpl implements TourDestService{
 
     @Autowired
     @Qualifier("InMemory")
+
+    private static TourDestServiceImpl service = null;
     private TourDestRepository repository;
+
+    private TourDestServiceImpl() {
+        this.repository = TourDestRepositoryImpl.getRepository();
+    }
+
+    public static TourDestServiceImpl getService(){
+        if (service == null) service = new TourDestServiceImpl();
+        return service;
+    }
 
     @Override
     public TourDest create(TourDest tourDest) {
@@ -38,7 +51,7 @@ public class TourDestServiceImpl {
     }
 
     @Override
-    public Set<TourDest> getAll() {
+    public Set<TourDest> geetAll() {
         return repository.getAll();
     }
 }

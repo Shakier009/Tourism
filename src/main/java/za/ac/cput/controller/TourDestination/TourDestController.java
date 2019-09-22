@@ -20,8 +20,8 @@ public class TourDestController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    TourDest create(@PathVariable  String ticketNr){
-        TourDest tourDest = TourDestFactory.buildTourDest(ticketNr);
+    TourDest create(@PathVariable  String location, String arriveDate){
+        TourDest tourDest = TourDestFactory.getTourDest(location, arriveDate);
         return service.create(tourDest);
 
     }
@@ -48,6 +48,6 @@ public class TourDestController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<TourDest> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

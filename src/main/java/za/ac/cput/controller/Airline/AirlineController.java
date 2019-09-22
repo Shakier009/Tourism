@@ -1,5 +1,6 @@
 package za.ac.cput.controller.Airline;
 
+import org.springframework.stereotype.Controller;
 import za.ac.cput.domain.Airline.Airline;
 import za.ac.cput.factory.Airline.AirlineFactory;
 import za.ac.cput.service.Airline.impl.AirlineServiceImpl;
@@ -14,6 +15,10 @@ import java.util.Set;
 @RestController
 @RequestMapping("/tourism/Airline")
 public class AirlineController {
+    @Controller("/review")
+    public class ReviewController {}
+    @Controller("/book")
+    public class BookController {}
 
     @Autowired
     private AirlineServiceImpl service;
@@ -48,7 +53,7 @@ public class AirlineController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<Airline> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 
 }

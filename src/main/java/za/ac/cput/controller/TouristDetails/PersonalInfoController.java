@@ -20,9 +20,10 @@ public class PersonalInfoController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    PersonalInfo create(@PathVariable  String ticketNr){
-        PersonalInfo personalInfo = PersonalInfoFactory.buildPersonalInfo(ticketNr);
+    PersonalInfo create(@PathVariable  String birthPlce, int age){
+        PersonalInfo personalInfo = PersonalInfoFactory.getPersonalInfo(birthPlce, age);
         return service.create(personalInfo);
+
 
     }
 
@@ -48,6 +49,6 @@ public class PersonalInfoController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<PersonalInfo> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

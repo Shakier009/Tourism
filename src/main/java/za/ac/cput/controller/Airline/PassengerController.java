@@ -21,8 +21,8 @@ public class PassengerController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    Passenger create(@PathVariable  String ticketNr){
-        Passenger passenger = PassengerFactory.buildPassenger(ticketNr);
+    Passenger create(@PathVariable  String psnName, String psnSName, String psngerId, int age){
+        Passenger passenger = PassengerFactory.getPassenger(psnName, psnSName, psngerId, age);
         return service.create(passenger);
 
     }
@@ -49,6 +49,6 @@ public class PassengerController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<Passenger> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

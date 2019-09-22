@@ -2,6 +2,7 @@ package za.ac.cput.service.Log_In.Impl;
 
 import za.ac.cput.domain.Log_In.Register;
 import za.ac.cput.repository.Log_In.RegisterRepository;
+import za.ac.cput.repository.impl.Log_In.RegisterRepositoryImpl;
 import za.ac.cput.service.Log_In.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,11 +10,22 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service("ServiceImpl")
-public class RegisterServiceImpl {
+@Service("RegisterServiceImpl")
+public class RegisterServiceImpl implements RegisterService{
     @Autowired
     @Qualifier("InMemory")
+
+    private static RegisterServiceImpl service = null;
     private RegisterRepository repository;
+
+    private RegisterServiceImpl() {
+        this.repository = RegisterRepositoryImpl.getRepository();
+    }
+
+    public static RegisterServiceImpl getService(){
+        if (service == null) service = new RegisterServiceImpl();
+        return service;
+    }
 
     @Override
     public Register create(Register register) {
@@ -37,7 +49,7 @@ public class RegisterServiceImpl {
     }
 
     @Override
-    public Set<Register> getAll() {
+    public Set<Register> geetAll() {
         return repository.getAll();
     }
 }

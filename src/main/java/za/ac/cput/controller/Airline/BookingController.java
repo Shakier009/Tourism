@@ -23,9 +23,9 @@ public class BookingController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    Booking create(@PathVariable  String ticketNr){
-        Booking booking = BookingFactory.buildBooking(ticketNr);
-        return service.create(booking);
+    Booking create(@PathVariable  String depTime, String invoice, String destination, String bookingId, int seatNr){
+       Booking booking = BookingFactory.getBooking(invoice, depTime, destination, bookingId, seatNr);
+       return service.create(booking);
 
     }
 
@@ -51,6 +51,6 @@ public class BookingController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<Booking> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

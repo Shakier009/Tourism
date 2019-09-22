@@ -20,8 +20,8 @@ public class ResturantsController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    Resturants create(@PathVariable  String ticketNr){
-        Resturants resturants = ResturantsFactory.buildResturants(ticketNr);
+    Resturants create(@PathVariable  String restName, String restBooking){
+        Resturants resturants = ResturantsFactory.getResturants(restName, restBooking);
         return service.create(resturants);
 
     }
@@ -48,6 +48,6 @@ public class ResturantsController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<Resturants> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

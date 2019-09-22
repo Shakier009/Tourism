@@ -1,11 +1,11 @@
 package za.ac.cput.controller.Interests;
 
+import za.ac.cput.domain.Interests.Interests;
 import za.ac.cput.domain.Interests.Products;
 import za.ac.cput.factory.Interests.ProductsFactory;
 import za.ac.cput.service.Interests.Impl.ProductsServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -19,8 +19,8 @@ public class ProductsController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    Products create(@PathVariable  String ticketNr){
-        Products products = ProductsFactory.buildProducts(ticketNr);
+    Products create(@PathVariable  String prodName, String prodType){
+        Products products = ProductsFactory.getProducts(prodName, prodType);
         return service.create(products);
 
     }
@@ -47,6 +47,6 @@ public class ProductsController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<Products> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

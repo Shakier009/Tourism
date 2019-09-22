@@ -2,6 +2,7 @@ package za.ac.cput.service.TouristDetails.Impl;
 
 import za.ac.cput.domain.TouristDetails.TouristType;
 import za.ac.cput.repository.TouristDetails.TouristTypeRepository;
+import za.ac.cput.repository.impl.TouristDetails.TouristTypeRepositoryImpl;
 import za.ac.cput.service.TouristDetails.TouristTypeServce;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,12 +10,23 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service("ServiceImpl")
-public class TouristTypeServiceImpl {
+@Service("TouristTypeServiceImpl")
+public class TouristTypeServiceImpl implements TouristTypeServce{
 
     @Autowired
     @Qualifier("InMemory")
-    private TouristTypeServiceImpl repository;
+
+    private static TouristTypeServiceImpl service = null;
+    private TouristTypeRepository repository;
+
+    private TouristTypeServiceImpl() {
+        this.repository = TouristTypeRepositoryImpl.getRepository();
+    }
+
+    public static TouristTypeServiceImpl getService(){
+        if (service == null) service = new TouristTypeServiceImpl();
+        return service;
+    }
 
     @Override
     public TouristType create(TouristType touristType) {
@@ -38,7 +50,7 @@ public class TouristTypeServiceImpl {
     }
 
     @Override
-    public Set<TouristType> getAll() {
+    public Set<TouristType> geetAll() {
         return repository.getAll();
     }
 }

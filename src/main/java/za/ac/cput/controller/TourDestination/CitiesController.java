@@ -20,8 +20,8 @@ public class CitiesController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    Cities create(@PathVariable  String ticketNr){
-        Cities cities = CitiesFactory.buildCities(ticketNr);
+    Cities create(@PathVariable  String cityName){
+        Cities cities = CitiesFactory.getCities(cityName);
         return service.create(cities);
 
     }
@@ -48,6 +48,6 @@ public class CitiesController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<Cities> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

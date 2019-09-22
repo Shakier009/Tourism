@@ -21,7 +21,7 @@ public class TouristTypeController {
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
     TouristType create(@PathVariable  String ticketNr){
-        TouristType touristType = TouristTypeFactory.buildTouristType(ticketNr);
+        TouristType touristType = TouristTypeFactory.getTouristType(ticketNr);
         return service.create(touristType);
 
     }
@@ -48,6 +48,6 @@ public class TouristTypeController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<TouristType> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }

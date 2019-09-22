@@ -2,6 +2,7 @@ package za.ac.cput.service.TouristDetails.Impl;
 
 import za.ac.cput.domain.TouristDetails.PersonalInfo;
 import za.ac.cput.repository.TouristDetails.PersonalInfoRepository;
+import za.ac.cput.repository.impl.TouristDetails.PersonalInfoRepositoryImpl;
 import za.ac.cput.service.TouristDetails.PersonalInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,12 +10,23 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service("ServiceImpl")
-public class PersonalInfoServiceImpl {
+@Service("PersonalInfoServiceImpl")
+public class PersonalInfoServiceImpl implements PersonalInfoService{
 
     @Autowired
     @Qualifier("InMemory")
-    private PersonalInfoServiceImpl repository;
+
+    private static PersonalInfoServiceImpl service = null;
+    private PersonalInfoRepository repository;
+
+    private PersonalInfoServiceImpl() {
+        this.repository = PersonalInfoRepositoryImpl.getRepository();
+    }
+
+    public static PersonalInfoServiceImpl getService(){
+        if (service == null) service = new PersonalInfoServiceImpl();
+        return service;
+    }
 
     @Override
     public PersonalInfo create(PersonalInfo personalInfo) {
@@ -38,7 +50,7 @@ public class PersonalInfoServiceImpl {
     }
 
     @Override
-    public Set<PersonalInfo> getAll() {
+    public Set<PersonalInfo> geetAll() {
         return repository.getAll();
     }
 }

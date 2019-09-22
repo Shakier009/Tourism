@@ -19,8 +19,8 @@ public class PlaceIntController {
 
     @GetMapping("/create/{ticketNr}")
     public @ResponseBody
-    PlaceInt create(@PathVariable  String ticketNr){
-        PlaceInt placeInt = PlaceIntFactory.buildPlaceInt(ticketNr);
+    PlaceInt create(@PathVariable  String plcName,String  plcLoc){
+        PlaceInt placeInt = PlaceIntFactory.getPlaceInt(plcName, plcLoc);
         return service.create(placeInt);
 
     }
@@ -47,6 +47,6 @@ public class PlaceIntController {
     @GetMapping("/getall")
     @ResponseBody
     public Set<PlaceInt> getAll(){
-        return service.getAll();
+        return service.geetAll();
     }
 }
