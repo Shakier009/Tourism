@@ -14,8 +14,6 @@ import java.util.Set;
 @Service("CitiesServiceImpl")
 public class CitiesServiceImpl implements CitiesService {
 
-    @Autowired
-    @Qualifier("InMemory")
 
     private static CitiesServiceImpl service = null;
     private CitiesRepository repository;

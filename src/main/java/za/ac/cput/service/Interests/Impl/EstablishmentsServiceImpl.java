@@ -12,8 +12,7 @@ import java.util.Set;
 
 @Service("EstablishmentsServiceImpl")
 public class EstablishmentsServiceImpl implements EstablishmentsService{
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static EstablishmentsServiceImpl service = null;
     private EstablishmentsRepository repository;

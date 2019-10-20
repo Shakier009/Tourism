@@ -13,8 +13,7 @@ import java.util.Set;
 @Service("TouristTypeServiceImpl")
 public class TouristTypeServiceImpl implements TouristTypeServce{
 
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static TouristTypeServiceImpl service = null;
     private TouristTypeRepository repository;

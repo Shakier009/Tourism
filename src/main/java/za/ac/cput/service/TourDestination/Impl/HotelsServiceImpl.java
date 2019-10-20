@@ -13,8 +13,6 @@ import java.util.Set;
 @Service("HotelsServiceImpl")
 public class HotelsServiceImpl implements HotelsService{
 
-    @Autowired
-    @Qualifier("InMemory")
 
     private static HotelsServiceImpl service = null;
     private HotelsRepository repository;

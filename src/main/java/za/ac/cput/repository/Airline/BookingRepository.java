@@ -1,11 +1,16 @@
-package za.ac.cput.repository.Airline;
-
-
-import za.ac.cput.domain.Airline.Booking;
-import za.ac.cput.repository.IRepository;
-
-import java.util.Set;
-
-public interface BookingRepository extends IRepository<Booking, String>{
-    Set<Booking> getAll();
-}
+//package za.ac.cput.repository.Airline;
+//
+//
+//
+//import org.springframework.data.jpa.repository.JpaRepository;
+//import za.ac.cput.domain.Airline.Booking;
+//import org.springframework.data.repository.CrudRepository;
+//import org.springframework.stereotype.Repository;
+//import za.ac.cput.repository.IRepository;
+//
+//import java.util.Set;
+//@Repository
+//public interface BookingRepository extends CrudRepository<Booking, String> {
+//    //Set<Booking> getAll();
+//}
+////JpaRepository

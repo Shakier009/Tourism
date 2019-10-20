@@ -13,8 +13,7 @@ import java.util.Set;
 
 @Service("PlaceIntServiceImpl")
 public class PlaceIntServiceImpl implements PlaceIntService{
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static PlaceIntServiceImpl service = null;
     private PlaceIntRepository repository;

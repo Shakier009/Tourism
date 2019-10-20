@@ -13,8 +13,7 @@ import java.util.Set;
 @Service("FlightDetailsServiceImpl")
 public class FlightDetailsServiceImpl implements FlightDetailsService{
 
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static FlightDetailsServiceImpl service = null;
     private FlightDetailsRepository repository;

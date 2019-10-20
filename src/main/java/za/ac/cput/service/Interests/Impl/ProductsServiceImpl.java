@@ -13,8 +13,7 @@ import java.util.Set;
 
 @Service("ProductsServiceImpl")
 public class ProductsServiceImpl implements ProductsServices {
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static ProductsServiceImpl service = null;
     private ProductsRepository repository;

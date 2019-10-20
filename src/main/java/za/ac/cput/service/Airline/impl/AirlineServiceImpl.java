@@ -13,8 +13,6 @@ import java.util.Set;
 @Service("AirlineServiceImpl")
 public class AirlineServiceImpl implements AirlineSevice{
 
-    @Autowired
-    @Qualifier("InMemory")
     private static AirlineServiceImpl service = null;
     private AirlineRepository repository;
 
@@ -57,3 +55,6 @@ public class AirlineServiceImpl implements AirlineSevice{
         return null;
     }*/
 }
+
+
+

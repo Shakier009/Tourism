@@ -13,8 +13,6 @@ import java.util.Set;
 @Service("PersonalInfoServiceImpl")
 public class PersonalInfoServiceImpl implements PersonalInfoService{
 
-    @Autowired
-    @Qualifier("InMemory")
 
     private static PersonalInfoServiceImpl service = null;
     private PersonalInfoRepository repository;

@@ -13,8 +13,7 @@ import java.util.Set;
 @Service("HospitalsServiceImpl")
 public class HospitalsServiceImpl implements HospitalsService{
 
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static HospitalsServiceImpl service = null;
     private HospitalsRepository repository;

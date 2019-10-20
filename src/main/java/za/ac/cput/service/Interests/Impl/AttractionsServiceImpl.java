@@ -12,8 +12,7 @@ import java.util.Set;
 
 @Service("AttractionsServiceImpl")
 public class AttractionsServiceImpl implements AttractionsService{
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static AttractionsServiceImpl service = null;
     private AttractionsRepository repository;

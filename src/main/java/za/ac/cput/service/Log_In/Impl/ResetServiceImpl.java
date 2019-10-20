@@ -12,8 +12,7 @@ import java.util.Set;
 
 @Service("ResetServiceImpl")
 public class ResetServiceImpl  implements ResetService{
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static ResetServiceImpl service = null;
     private ResetRepository repository;

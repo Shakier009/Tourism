@@ -17,6 +17,10 @@ public class Airline {
         return ticketNr;
     }
 
+    public void setTicketNr(String ticketNr) {
+        this.ticketNr = ticketNr;
+    }
+
 
     public static class Builder {
 

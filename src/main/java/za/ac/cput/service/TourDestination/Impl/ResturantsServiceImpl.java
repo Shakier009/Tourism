@@ -14,8 +14,6 @@ import java.util.Set;
 @Service("ResturantsServiceImpl")
 public class ResturantsServiceImpl implements ResturantsService {
 
-    @Autowired
-    @Qualifier("InMemory")
 
     private static ResturantsServiceImpl service = null;
     private ResturantsRepository repository;

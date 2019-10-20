@@ -13,8 +13,6 @@ import java.util.Set;
 @Service("PassengerServiceImpl")
 public class PassengerServiceImpl implements PassengerService{
 
-    @Autowired
-    @Qualifier("InMemory")
 
     private static PassengerServiceImpl service = null;
     private PassengerRepository repository;

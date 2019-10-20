@@ -14,8 +14,7 @@ import java.util.Set;
 @Service("TourDestServiceImpl")
 public class TourDestServiceImpl implements TourDestService{
 
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static TourDestServiceImpl service = null;
     private TourDestRepository repository;

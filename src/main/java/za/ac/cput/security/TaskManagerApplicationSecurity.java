@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+
 @Configuration
 public class TaskManagerApplicationSecurity extends WebSecurityConfigurerAdapter {
 
@@ -18,26 +19,33 @@ public class TaskManagerApplicationSecurity extends WebSecurityConfigurerAdapter
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.inMemoryAuthentication()
-                .withUser("user")
-                .password(encoder().encode("password"))
+                .withUser("Jake")
+                .password(encoder().encode("Some123"))
                 .roles(USER_ROLE)
                 .and()
-                .withUser("admin")
-                .password(encoder().encode("admin"))
+                .withUser("MainMan")
+                .password(encoder().encode("Main123"))
                 .roles(ADMIN_ROLE, USER_ROLE);
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception{
         http.httpBasic()
+
                 .and()
+
                 .authorizeRequests()
+
                 .antMatchers(HttpMethod.POST, "/**/create/**").hasRole(ADMIN_ROLE)
+
                 .antMatchers(HttpMethod.PUT, "/**/update/**").hasRole(ADMIN_ROLE)
+
                 .antMatchers(HttpMethod.GET,"/**").hasAnyRole(USER_ROLE,ADMIN_ROLE)
+
                 .and()
-                .csrf().disable()
-                .formLogin().disable();
+
+                .csrf().disable();
+
     }
 
     @Bean

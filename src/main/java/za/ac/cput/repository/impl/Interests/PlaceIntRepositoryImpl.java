@@ -2,7 +2,7 @@ package za.ac.cput.repository.impl.Interests;
 
 import za.ac.cput.domain.Interests.PlaceInt;
 import za.ac.cput.repository.Interests.PlaceIntRepository;
-import za.ac.cput.repository.impl.Airline.AirlineRepositoryImpl;
+
 
 import java.util.HashSet;
 import java.util.Set;

@@ -12,8 +12,7 @@ import java.util.Set;
 
 @Service("LogInServiceImpl")
 public class LoginServiceImpl implements LoginService{
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static LoginServiceImpl service = null;
     private LogInRepository repository;

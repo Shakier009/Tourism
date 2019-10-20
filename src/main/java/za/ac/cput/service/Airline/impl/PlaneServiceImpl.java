@@ -13,8 +13,7 @@ import java.util.Set;
 
 @Service("PlaneServiceImpl")
 public class PlaneServiceImpl implements PlaneService{
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static PlaneServiceImpl service = null;
     private PlaneRepository repository;

@@ -13,8 +13,7 @@ import java.util.Set;
 
 @Service("InterestsServiceImpl")
 public class InterestsServiceImpl implements InterestsService{
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static InterestsServiceImpl service = null;
     private InterestsRepository repository;

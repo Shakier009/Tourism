@@ -12,8 +12,7 @@ import java.util.Set;
 
 @Service("RegisterServiceImpl")
 public class RegisterServiceImpl implements RegisterService{
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static RegisterServiceImpl service = null;
     private RegisterRepository repository;

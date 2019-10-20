@@ -13,8 +13,7 @@ import java.util.Set;
 @Service("DestinationServiceImpl")
 public class DestinationServiceImpl implements DetsinationService{
 
-    @Autowired
-    @Qualifier("InMemory")
+
 
     private static DestinationServiceImpl service = null;
     private DestinationRepository repository;
